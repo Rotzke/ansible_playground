@@ -1,0 +1,1 @@
+ansible -i hosts_lb web -m command -a "uname -r" -f 1
