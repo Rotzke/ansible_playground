@@ -1,0 +1,19 @@
+---
+- name: "Install basic requirements"
+  hosts: gcloud
+  
+  tasks:
+      - name: update apt
+        become: yes
+        apt:
+            name: python3-pip
+            force_apt_get: yes
+            update_cache: yes
+      - name: update pip
+        become: yes
+        pip:
+            name:
+                - requests
+                - lxml
+                - tqdm
+
